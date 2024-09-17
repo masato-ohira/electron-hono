@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { Fragment } from "react/jsx-runtime";
+import { Button } from "../components/ui/button";
 
 export default function HomePage() {
   return (
@@ -16,16 +17,17 @@ export default function HomePage() {
             height={256}
           />
         </div>
-        <span className={`text-4xl`}>⚡ Electron ⚡</span>
+        <span className={`text-4xl text-teal-400`}>⚡ Electron ⚡</span>
         <span>+</span>
         <span className={"text-5xl"}>Next.js</span>
         <span>+</span>
         <span>tailwindcss</span>
         <span>=</span>
-        <span>💕 </span>
       </div>
       <div className="mt-1 w-full flex-wrap flex justify-center">
-        <Link href="/foo">Go to next page</Link>
+        <Link href="/foo">
+          <Button variant={"secondary"}>OK</Button>
+        </Link>
       </div>
     </Fragment>
   );

@@ -1,0 +1,13 @@
+@layer utilities {
+  // ------------------------------
+  .vertical-lr {
+    writing-mode: vertical-lr;
+  }
+
+  .vertical-rl {
+    writing-mode: vertical-rl;
+  }
+  .font-feature-jp {
+    font-feature-settings: "palt" 1, "jp90";
+  }
+}

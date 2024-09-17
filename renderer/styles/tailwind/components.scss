@@ -1,0 +1,9 @@
+@layer components {
+  .hstack {
+    @apply flex flex-wrap flex-row items-center gap-2;
+  }
+
+  .center {
+    @apply flex flex-wrap justify-center items-center;
+  }
+}
