@@ -1,10 +1,10 @@
 import { chromium, devices } from 'playwright'
 import { getChromiumPath } from './path'
 
-export const crawl = async () => {
+export const scrapeUrl = async () => {
   // ElectronのChromiumバイナリのパスを指定
   const browser = await chromium.launch({
-    // executablePath: getChromiumPath(),
+    channel: 'chrome',
   })
 
   try {

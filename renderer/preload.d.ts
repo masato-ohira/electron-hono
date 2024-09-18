@@ -1,7 +1,7 @@
-import { IpcHandler } from '../main/preload'
+import type { ApiType } from '../main/api'
 
 declare global {
   interface Window {
-    ipc: IpcHandler
+    myApi: ApiType
   }
 }

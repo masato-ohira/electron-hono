@@ -2,7 +2,7 @@ import useSWR from 'swr'
 
 export default function HomePage() {
   const fetcher = async (url: string) => {
-    const data = await window.myApi.crawl()
+    const data = await window.myApi.scrapeUrl()
     return data
   }
 

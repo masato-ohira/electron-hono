@@ -1,8 +1,8 @@
 import path from 'node:path'
 import { app, ipcMain } from 'electron'
 import serve from 'electron-serve'
-import { crawl } from './api/playwright'
-import { getChromiumPath } from './api/playwright/path'
+import { readJsonKey, scrapeUrlKey } from './api'
+import { scrapeUrl } from './api/playwright'
 import { readJson } from './api/readJson'
 import { createWindow } from './helpers'
 
@@ -41,5 +41,5 @@ ipcMain.on('message', async (event, arg) => {
   event.reply('message', `${arg} World!`)
 })
 
-ipcMain.handle('read-json', readJson)
-ipcMain.handle('crawl', crawl)
+ipcMain.handle(readJsonKey, readJson)
+ipcMain.handle(scrapeUrlKey, scrapeUrl)
