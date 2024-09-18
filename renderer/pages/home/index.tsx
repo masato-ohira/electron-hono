@@ -1,22 +1,17 @@
-import { useEffect, useState } from 'react'
+import useSWR from 'swr'
 
 export default function HomePage() {
-  const [json, setJson] = useState([])
-
-  const fetchJson = async () => {
-    const data = await window.api.readJson('json/posts.json')
-    console.log(data)
-    setJson(data)
+  const fetcher = async (url: string) => {
+    const data = await window.myApi.crawl()
+    return data
   }
 
-  useEffect(() => {
-    fetchJson()
-  }, [])
-
+  const { data, isLoading } = useSWR('json/posts.json', fetcher)
+  if (isLoading) return <>loading...</>
   return (
     <div className={``}>
       <div className={``}>
-        {JSON.stringify(json)}
+        {JSON.stringify(data)}
         {/* <div>{JSON.stringify(data)}</div> */}
         {/* <DataTable columns={columns} data={payments} /> */}
       </div>

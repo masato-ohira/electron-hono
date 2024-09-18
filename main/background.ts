@@ -1,7 +1,9 @@
 import path from 'node:path'
 import { app, ipcMain } from 'electron'
 import serve from 'electron-serve'
-import { readJSON } from 'fs-extra'
+import { crawl } from './api/playwright'
+import { getChromiumPath } from './api/playwright/path'
+import { readJson } from './api/readJson'
 import { createWindow } from './helpers'
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -27,7 +29,6 @@ if (isProd) {
   } else {
     const port = process.argv[2]
     await mainWindow.loadURL(`http://localhost:${port}/home`)
-
     // mainWindow.webContents.openDevTools()
   }
 })()
@@ -40,12 +41,5 @@ ipcMain.on('message', async (event, arg) => {
   event.reply('message', `${arg} World!`)
 })
 
-ipcMain.handle('read-json', async (event, fileName: string) => {
-  console.log({ resourcesPath: process.resourcesPath })
-  const fullPath =
-    process.env.NODE_ENV === 'development'
-      ? path.join(__dirname, '..', 'resources', fileName)
-      : path.join(process.resourcesPath, fileName)
-
-  return readJSON(fullPath, 'utf-8')
-})
+ipcMain.handle('read-json', readJson)
+ipcMain.handle('crawl', crawl)

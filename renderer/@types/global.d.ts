@@ -1,11 +1,7 @@
+import type { myApi } from '@@/main/preload'
+
 declare global {
   interface Window {
-    api: Sandbox
+    myApi: typeof myApi
   }
-}
-
-export interface Sandbox {
-  readJson: (
-    path: string,
-  ) => Promise<Record<string, string | number | undefined>[]>
 }

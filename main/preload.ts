@@ -1,5 +1,4 @@
 import { type IpcRendererEvent, contextBridge, ipcRenderer } from 'electron'
-import { fetchJson } from './api/fetchJson'
 
 const handler = {
   send(channel: string, value: unknown) {
@@ -16,11 +15,12 @@ const handler = {
   },
 }
 
-const api = {
+export const myApi = {
   readJson: (filePath: string) => ipcRenderer.invoke('read-json', filePath),
+  crawl: () => ipcRenderer.invoke('crawl'),
 }
 
 contextBridge.exposeInMainWorld('ipc', handler)
-contextBridge.exposeInMainWorld('api', api)
+contextBridge.exposeInMainWorld('myApi', myApi)
 
 export type IpcHandler = typeof handler
