@@ -5,7 +5,6 @@ export const crawl = async () => {
   // ElectronのChromiumバイナリのパスを指定
   const browser = await chromium.launch({
     // executablePath: getChromiumPath(),
-    channel: devices['Desktop Chrome'].defaultBrowserType,
   })
 
   try {
