@@ -5,11 +5,10 @@ import { MdMenu } from 'react-icons/md'
 
 export const Header = () => {
   return (
-    <div
+    <header
       className={`
         h-14
         border-b
-        bg-white
         hstack
         justify-between
         px-4
@@ -18,6 +17,7 @@ export const Header = () => {
         top-0
         w-[calc(100%-256px)]
         z-10
+        bg-gray-100
       `}
     >
       <div className="hstack gap-6">
@@ -27,11 +27,15 @@ export const Header = () => {
 
       <div className="hstack justify-end flex-1 gap-4">
         <Input
-          className={'w-[50%] h-8 placeholder:text-foreground/30'}
+          className={`
+            w-[50%] h-8
+            bg-white
+            placeholder:text-foreground/30
+          `}
           placeholder={'対象URLを入力'}
         />
         <Button className={'h-8'}>クロール開始</Button>
       </div>
-    </div>
+    </header>
   )
 }

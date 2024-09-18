@@ -1,7 +1,7 @@
 {
   "private": true,
-  "name": "my-nextron-app",
-  "description": "My application description",
+  "name": "playwright-wse",
+  "description": "Playwrightを活用してJavaScriptで動的に生成されるウェブコンテンツを効果的に収集するツールです。",
   "version": "1.0.0",
   "author": " John Doe <mail@example.com>",
   "main": "app/background.js",

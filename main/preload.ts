@@ -1,4 +1,5 @@
-import { contextBridge, ipcRenderer, IpcRendererEvent } from 'electron'
+import { type IpcRendererEvent, contextBridge, ipcRenderer } from 'electron'
+import { fetchJson } from './api/fetchJson'
 
 const handler = {
   send(channel: string, value: unknown) {
@@ -15,6 +16,11 @@ const handler = {
   },
 }
 
+const api = {
+  readJson: (filePath: string) => ipcRenderer.invoke('read-json', filePath),
+}
+
 contextBridge.exposeInMainWorld('ipc', handler)
+contextBridge.exposeInMainWorld('api', api)
 
 export type IpcHandler = typeof handler
