@@ -1,14 +1,10 @@
-import { columns, payments } from '@/components/views/home/data'
-import { DataTable } from '@c/views/home/DataTable'
 import { useEffect, useState } from 'react'
-
-import { ipcMain } from 'electron'
 
 export default function HomePage() {
   const [json, setJson] = useState([])
 
   const fetchJson = async () => {
-    const data = await window.api.readJson('../renderer/json/posts.json')
+    const data = await window.api.readJson('json/posts.json')
     console.log(data)
     setJson(data)
   }

@@ -40,7 +40,12 @@ ipcMain.on('message', async (event, arg) => {
   event.reply('message', `${arg} World!`)
 })
 
-ipcMain.handle('read-json', async (event, filePath: string) => {
-  const fullPath = path.join(__dirname, filePath)
+ipcMain.handle('read-json', async (event, fileName: string) => {
+  console.log({ resourcesPath: process.resourcesPath })
+  const fullPath =
+    process.env.NODE_ENV === 'development'
+      ? path.join(__dirname, '..', 'resources', fileName)
+      : path.join(process.resourcesPath, 'resources', fileName)
+
   return readJSON(fullPath, 'utf-8')
 })
