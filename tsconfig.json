@@ -17,6 +17,8 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["./renderer/*"],
+      "@c/*": ["./renderer/components/*"],
+      "@ui/*": ["./renderer/components/ui/*"],
       "@@/*": ["./*"]
     }
   },
