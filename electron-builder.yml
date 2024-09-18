@@ -9,4 +9,7 @@ files:
     filter:
       - package.json
       - app
+extraResources:
+  - from: ./resources/json
+    to: json
 publish: null
