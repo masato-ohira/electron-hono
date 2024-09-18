@@ -19,7 +19,14 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang={'ja'}>
+      <Html
+        lang={'ja'}
+        className={`
+          scrollbar-thumb-primary
+          scrollbar-track-gray-200
+          scrollbar-thin
+        `}
+      >
         <Head>
           <GoogleFonts />
         </Head>
@@ -31,11 +38,11 @@ class MyDocument extends Document {
             `}
           >
             <SideNav />
-            <div className={'flex-1'}>
+            <div className={'flex-1 pt-14'}>
               <Header />
               <main
                 className={`
-                  p-4
+                  p-8
                 `}
               >
                 <Main />

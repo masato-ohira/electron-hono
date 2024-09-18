@@ -10,17 +10,19 @@ export const Logo = () => {
         h-14
         border-b
         border-white/20
-        center
+        flex
+        items-center
+        px-4
       `}
     >
       <div className="hstack">
-        <IoLogoElectron className={`text-3xl`} />
+        <IoLogoElectron className={`text-3xl text-lime-300`} />
         <h1
           className={`
               text-xl font-semibold
             `}
         >
-          Crawlee Wse
+          Playwright Wse
         </h1>
       </div>
     </Link>
