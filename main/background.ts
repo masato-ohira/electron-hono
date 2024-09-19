@@ -1,9 +1,10 @@
 import path from 'node:path'
 import { app, ipcMain } from 'electron'
 import serve from 'electron-serve'
-import { readJsonKey, scrapeUrlKey } from './api'
+import { readJsonKey, saveJsonKey, scrapeUrlKey } from './api'
+import { readJson } from './api/json/readJson'
+import { saveJson } from './api/json/saveJson'
 import { scrapeUrl } from './api/playwright'
-import { readJson } from './api/readJson'
 import { createWindow } from './helpers'
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -42,4 +43,5 @@ ipcMain.on('message', async (event, arg) => {
 })
 
 ipcMain.handle(readJsonKey, readJson)
+ipcMain.handle(saveJsonKey, saveJson)
 ipcMain.handle(scrapeUrlKey, scrapeUrl)

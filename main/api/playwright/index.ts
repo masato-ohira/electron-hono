@@ -1,4 +1,4 @@
-import { chromium, devices } from 'playwright'
+import { type Browser, chromium, devices } from 'playwright'
 import { getChromiumPath } from './path'
 
 export const scrapeUrl = async () => {

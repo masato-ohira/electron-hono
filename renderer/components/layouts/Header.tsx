@@ -1,9 +1,19 @@
 import { Button } from '@ui/button'
 import { Input } from '@ui/input'
-import React from 'react'
 import { MdMenu } from 'react-icons/md'
+import { toast } from 'sonner'
+import { useSWRConfig } from 'swr'
 
 export const Header = () => {
+  const { mutate } = useSWRConfig()
+  const runToast = async () => {
+    await window.myApi.saveJson()
+    toast('Event has been created.', {
+      closeButton: true,
+    })
+    mutate('userdata.json')
+  }
+
   return (
     <header
       className={`
@@ -34,7 +44,15 @@ export const Header = () => {
           `}
           placeholder={'対象URLを入力'}
         />
-        <Button className={'h-8'}>クロール開始</Button>
+        <Button
+          className={'h-8'}
+          type={'button'}
+          onClick={() => {
+            runToast()
+          }}
+        >
+          クロール開始
+        </Button>
       </div>
     </header>
   )

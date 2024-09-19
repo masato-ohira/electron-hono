@@ -1,11 +1,14 @@
 import type { IpcRenderer } from 'electron'
 
-export const readJsonKey = 'read-json'
-export const scrapeUrlKey = 'scrape-url'
+export const readJsonKey = 'readJson'
+export const saveJsonKey = 'saveJson'
+export const scrapeUrlKey = 'scrapeUrl'
 
 export const createApi = (ipcRenderer: IpcRenderer) => {
   return {
-    readJson: (filePath: string) => ipcRenderer.invoke(readJsonKey, filePath),
+    readJson: async (filePath: string) =>
+      ipcRenderer.invoke(readJsonKey, filePath),
+    saveJson: async () => ipcRenderer.invoke(saveJsonKey),
     scrapeUrl: () => ipcRenderer.invoke(scrapeUrlKey),
   }
 }
