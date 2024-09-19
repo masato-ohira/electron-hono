@@ -22,11 +22,8 @@ export const Header = () => {
         hstack
         justify-between
         px-4
-        fixed
-        right-0
-        top-0
+        fixed right-0 z-10 top-0
         w-[calc(100%-256px)]
-        z-10
         bg-gray-100
       `}
     >
