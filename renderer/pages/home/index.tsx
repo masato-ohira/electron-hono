@@ -2,13 +2,13 @@ import useSWR from 'swr'
 
 export default function HomePage() {
   const fetcher = async (url: string) => {
-    const res = await fetch('http://localhost:8787/api/hello')
+    const res = await fetch('http://localhost:8787/api')
     const data = await res.json()
     console.log(data)
     return data
   }
 
-  const { data, isLoading } = useSWR('json/data.json', fetcher)
+  const { data, isLoading } = useSWR('/api', fetcher)
   if (isLoading) return <>loading...</>
   return (
     <div className={``}>

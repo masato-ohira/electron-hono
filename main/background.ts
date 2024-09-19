@@ -2,11 +2,7 @@ import path from 'node:path'
 import { serve as honoServe } from '@hono/node-server'
 import { app, ipcMain } from 'electron'
 import serve from 'electron-serve'
-import { crawlerRunKey, readJsonKey, saveJsonKey, scrapeUrlKey } from './api'
-import { hono } from './api/hono'
-import { readJson } from './api/json/readJson'
-import { saveJson } from './api/json/saveJson'
-import { crawlSite, scrapeUrl } from './api/playwright'
+import honoApp from './api'
 import { createWindow } from './helpers'
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -20,8 +16,8 @@ if (isProd) {
   await app.whenReady()
 
   honoServe({
-    fetch: hono.fetch,
-    port: 8787, // Port number, default is 3000
+    fetch: honoApp.fetch,
+    port: 8787,
   })
 
   const mainWindow = createWindow('main', {
@@ -48,8 +44,3 @@ app.on('window-all-closed', () => {
 ipcMain.on('message', async (event, arg) => {
   event.reply('message', `${arg} World!`)
 })
-
-ipcMain.handle(readJsonKey, readJson)
-ipcMain.handle(saveJsonKey, saveJson)
-ipcMain.handle(scrapeUrlKey, scrapeUrl)
-ipcMain.handle(crawlerRunKey, crawlSite)

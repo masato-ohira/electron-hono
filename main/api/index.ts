@@ -1,20 +1,18 @@
-import type { IpcRenderer } from 'electron'
-import type { CrawleeProps } from './crawlee/types'
+import { Hono } from 'hono'
+import { cors } from 'hono/cors'
 
-export const readJsonKey = 'readJson'
-export const saveJsonKey = 'saveJson'
-export const scrapeUrlKey = 'scrapeUrl'
-export const crawlerRunKey = 'crawlerRun'
-export const crawleSiteRunKey = 'crawleSite'
+import jsonApi from './json'
 
-export const createApi = (ipcRenderer: IpcRenderer) => {
-  return {
-    readJson: async (filePath: string) =>
-      ipcRenderer.invoke(readJsonKey, filePath),
-    saveJson: async () => ipcRenderer.invoke(saveJsonKey),
-    scrapeUrl: () => ipcRenderer.invoke(scrapeUrlKey),
-    crawlerRun: async () => ipcRenderer.invoke(crawlerRunKey),
-  }
-}
+// Honoサーバを作成
+const app = new Hono()
+app.use('*', cors())
 
-export type ApiType = ReturnType<typeof createApi>
+app.get('/api', (c) => {
+  return c.json({
+    ok: true,
+  })
+})
+
+// APIのエンドポイントを定義
+app.route('/api/json', jsonApi)
+export default app
