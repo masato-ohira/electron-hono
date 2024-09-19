@@ -11,7 +11,7 @@ export const Header = () => {
     toast('Event has been created.', {
       closeButton: true,
     })
-    mutate('userdata.json')
+    mutate('json/data.json')
   }
 
   return (

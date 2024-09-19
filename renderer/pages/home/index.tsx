@@ -6,7 +6,7 @@ export default function HomePage() {
     return data
   }
 
-  const { data, isLoading } = useSWR('userdata.json', fetcher)
+  const { data, isLoading } = useSWR('json/data.json', fetcher)
   if (isLoading) return <>loading...</>
   return (
     <div className={``}>
