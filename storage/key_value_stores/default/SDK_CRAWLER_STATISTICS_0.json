@@ -1,0 +1,53 @@
+{
+  "requestsFinished": 25,
+  "requestsFailed": 1,
+  "requestsRetries": 1,
+  "requestsFailedPerMinute": 1,
+  "requestsFinishedPerMinute": 36,
+  "requestMinDurationMillis": 3183,
+  "requestMaxDurationMillis": 4196,
+  "requestTotalFailedDurationMillis": 3095,
+  "requestTotalFinishedDurationMillis": 86468,
+  "crawlerStartedAt": "2024-09-19T09:16:29.863Z",
+  "crawlerFinishedAt": "2024-09-19T09:17:10.855Z",
+  "statsPersistedAt": "2024-09-19T09:17:10.855Z",
+  "crawlerRuntimeMillis": 41185,
+  "crawlerLastStartTimestamp": 1726737389670,
+  "requestRetryHistogram": [
+    25,
+    null,
+    null,
+    null,
+    1
+  ],
+  "statsId": 0,
+  "requestAvgFailedDurationMillis": 3095,
+  "requestAvgFinishedDurationMillis": 3459,
+  "requestTotalDurationMillis": 89563,
+  "requestsTotal": 26,
+  "requestsWithStatusCode": {
+    "200": 30
+  },
+  "errors": {
+    "at /home/oohira/study/electron/electron-hono/app/background.js:146:114": {
+      "missing error code": {
+        "TypeError": {
+          "Cannot read properties of undefined (reading 'call')": {
+            "count": 1
+          }
+        }
+      }
+    }
+  },
+  "retryErrors": {
+    "at /home/oohira/study/electron/electron-hono/app/background.js:146:114": {
+      "missing error code": {
+        "TypeError": {
+          "Cannot read properties of undefined (reading 'call')": {
+            "count": 4
+          }
+        }
+      }
+    }
+  }
+}

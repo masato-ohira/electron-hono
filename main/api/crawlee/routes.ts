@@ -21,36 +21,32 @@ export const createRouter = async (props: CrawleeProps) => {
 
     await page.waitForTimeout(props.waitFor || 2000)
 
-    const hasGtm = await page.evaluate(() => {
-      const gtm = (window as any).google_tag_manager
-      if (gtm) {
-        return true
-      }
-      return false
-    })
+    // const hasGtm = await page.evaluate(() => {
+    //   const gtm = (window as any).google_tag_manager
+    //   if (gtm) {
+    //     return true
+    //   }
+    //   return false
+    // })
 
     // ページ内のすべての<a>タグのリンクを取得
-    const links = await page.evaluate((props) => {
-      return Array.from(document.querySelectorAll('a'))
-        .map((anchor) => anchor.href)
-        .filter(
-          (href) =>
-            typeof href === 'string' &&
-            href.startsWith(props.startUrl) &&
-            !href.includes('.pdf'),
-        )
-    }, props)
+    // biome-ignore lint/security/noGlobalEval: <explanation>
+    const links = await eval(`page.evaluate(() => {
+      return Array.from(document.querySelectorAll('a')).map((a) => a.href)
+    })`)
 
     const title = await page.title()
     await pushData({
       url: page.url(),
       title,
-      hasGtm,
+      // hasGtm,
     })
 
     // リンクをキューに追加
     for (const link of links) {
-      await queue.addRequest({ url: link })
+      if (link.startsWith(props.startUrl)) {
+        await queue.addRequest({ url: link })
+      }
     }
   })
 

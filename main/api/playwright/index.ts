@@ -1,24 +1,5 @@
-import { type Browser, type Page, chromium, devices } from 'playwright'
-import { getChromiumPath } from './path'
-
-export const scrapeUrl = async () => {
-  // ElectronのChromiumバイナリのパスを指定
-  const browser = await chromium.launch({
-    channel: 'chrome',
-  })
-
-  try {
-    const page = await browser.newPage()
-    await page.goto('https://example.com')
-    const title = await page.title()
-    return title
-  } catch (error) {
-    console.log({ error })
-    return 'error'
-  } finally {
-    browser.close()
-  }
-}
+import { Hono } from 'hono'
+import { type Page, chromium } from 'playwright'
 
 type PageProps = {
   page: Page
@@ -39,11 +20,11 @@ const crawlPage = async ({
   const title = await page.title()
   console.log({ url, title })
 
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(2000)
 
   // ページ内のリンクを取得
   // biome-ignore lint/security/noGlobalEval: <explanation>
-  const links = await eval(`this.page.evaluate(() => {
+  const links = await eval(`page.evaluate(() => {
     return Array.from(document.querySelectorAll('a')).map((a) => a.href)
   })`)
 
@@ -52,7 +33,7 @@ const crawlPage = async ({
     if (link.startsWith(startUrl) && !visited.has(link)) {
       await crawlPage({
         page,
-        url,
+        url: link,
         startUrl,
         visited,
       })
@@ -60,7 +41,7 @@ const crawlPage = async ({
   }
 }
 
-export const crawlSite = async () => {
+const crawlSite = async () => {
   const browser = await chromium.launch({
     channel: 'chrome',
   })
@@ -68,14 +49,27 @@ export const crawlSite = async () => {
   try {
     const page = await browser.newPage()
     const startUrl = 'https://www.okeihan.net/recommend/hatsumoude/'
-    await crawlPage({
+    const res = await crawlPage({
       page,
       url: startUrl,
       startUrl,
-    }) // クロールを開始するURL
+    })
+    // await page.goto(startUrl)
+    // const res = await page.title()
+    return res
   } catch (error) {
     console.error({ error })
   } finally {
     await browser.close()
   }
 }
+
+const app = new Hono()
+app.get('/', async (c) => {
+  const data = await crawlSite()
+  return c.json({
+    data,
+  })
+})
+
+export default app

@@ -24,7 +24,13 @@ if (isProd) {
     width: 1000,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true, // これを有効化
+      nodeIntegrationInWorker: true,
+      webSecurity: false,
+      contextIsolation: true,
+      // contextIsolation: false, // これを無効化
+      // enableRemoteModule: true, // これを有効化（必要に応じて）
+      // preload: path.join(__dirname, 'preload.js'),
     },
   })
 
