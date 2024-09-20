@@ -1,8 +1,7 @@
-import path from 'node:path'
+import honoApp from '@@/api'
 import { serve as honoServe } from '@hono/node-server'
 import { app, ipcMain } from 'electron'
 import serve from 'electron-serve'
-import honoApp from './api'
 import { createWindow } from './helpers'
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -23,15 +22,12 @@ if (isProd) {
   const mainWindow = createWindow('main', {
     width: 1000,
     height: 600,
-    webPreferences: {
-      nodeIntegration: true, // これを有効化
-      nodeIntegrationInWorker: true,
-      webSecurity: false,
-      contextIsolation: true,
-      // contextIsolation: false, // これを無効化
-      // enableRemoteModule: true, // これを有効化（必要に応じて）
-      // preload: path.join(__dirname, 'preload.js'),
-    },
+    // webPreferences: {
+    //   nodeIntegration: true, // これを有効化
+    //   nodeIntegrationInWorker: true,
+    //   webSecurity: false,
+    //   contextIsolation: true,
+    // },
   })
 
   if (isProd) {

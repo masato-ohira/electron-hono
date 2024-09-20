@@ -35,7 +35,8 @@
         "useExhaustiveDependencies": "off"
       },
       "security": {
-        "noDangerouslySetInnerHtml": "warn"
+        "noDangerouslySetInnerHtml": "warn",
+        "noGlobalEval": "off"
       },
       "style": {
         "noNonNullAssertion": "warn",

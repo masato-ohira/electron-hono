@@ -1,32 +1,32 @@
 {
-  "requestsFinished": 7,
+  "requestsFinished": 6,
   "requestsFailed": 0,
   "requestsRetries": 0,
   "requestsFailedPerMinute": 0,
-  "requestsFinishedPerMinute": 25,
-  "requestMinDurationMillis": 3486,
-  "requestMaxDurationMillis": 4270,
+  "requestsFinishedPerMinute": 33,
+  "requestMinDurationMillis": 1992,
+  "requestMaxDurationMillis": 2903,
   "requestTotalFailedDurationMillis": 0,
-  "requestTotalFinishedDurationMillis": 26359,
-  "crawlerStartedAt": "2024-09-20T00:45:56.592Z",
-  "crawlerFinishedAt": "2024-09-20T00:46:13.407Z",
-  "statsPersistedAt": "2024-09-20T00:46:13.407Z",
-  "crawlerRuntimeMillis": 17033,
-  "crawlerLastStartTimestamp": 1726793156374,
+  "requestTotalFinishedDurationMillis": 13506,
+  "crawlerStartedAt": "2024-09-20T02:12:52.593Z",
+  "crawlerFinishedAt": "2024-09-20T02:13:03.359Z",
+  "statsPersistedAt": "2024-09-20T02:13:03.359Z",
+  "crawlerRuntimeMillis": 10955,
+  "crawlerLastStartTimestamp": 1726798372404,
   "requestRetryHistogram": [
-    7
+    6
   ],
   "statsId": 0,
   "requestAvgFailedDurationMillis": null,
-  "requestAvgFinishedDurationMillis": 3766,
-  "requestTotalDurationMillis": 26359,
-  "requestsTotal": 7,
+  "requestAvgFinishedDurationMillis": 2251,
+  "requestTotalDurationMillis": 13506,
+  "requestsTotal": 6,
   "requestsWithStatusCode": {
-    "200": 9
+    "200": 8
   },
   "errors": {},
   "retryErrors": {
-    "at /home/oohira/study/electron/electron-hono/app/background.js:133:115": {
+    "at /home/oohira/study/electron/electron-hono/app/background.js:125:115": {
       "missing error code": {
         "TypeError": {
           "Cannot read properties of undefined (reading 'call')": {

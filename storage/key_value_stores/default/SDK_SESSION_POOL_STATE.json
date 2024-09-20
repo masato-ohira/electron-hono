@@ -1,9 +1,9 @@
 {
-  "usableSessionsCount": 10,
+  "usableSessionsCount": 9,
   "retiredSessionsCount": 0,
   "sessions": [
     {
-      "id": "session_W5th9oDfyt",
+      "id": "session_Aza9ClbBO4",
       "cookieJar": {
         "version": "tough-cookie@4.1.4",
         "storeType": "MemoryCookieStore",
@@ -16,14 +16,14 @@
       "userData": {},
       "maxErrorScore": 3,
       "errorScoreDecrement": 0.5,
-      "expiresAt": "2024-09-20T01:35:56.624Z",
-      "createdAt": "2024-09-20T00:45:56.624Z",
+      "expiresAt": "2024-09-20T03:02:52.627Z",
+      "createdAt": "2024-09-20T02:12:52.627Z",
       "usageCount": 0,
       "maxUsageCount": 50,
       "errorScore": 0
     },
     {
-      "id": "session_VTT1wmBw72",
+      "id": "session_6fJcDBnAu5",
       "cookieJar": {
         "version": "tough-cookie@4.1.4",
         "storeType": "MemoryCookieStore",
@@ -34,158 +34,158 @@
         "cookies": [
           {
             "key": "PHPSESSID",
-            "value": "sme0l6qrlv582lrji2e928efgjus1jfh",
-            "expires": "2024-09-20T01:35:58.843Z",
+            "value": "hera11cli4df4atali2hh09acmh647og",
+            "expires": "2024-09-20T03:02:54.964Z",
             "domain": "www.okeihan.net",
             "path": "/",
             "hostOnly": true,
-            "creation": "2024-09-20T00:45:58.845Z",
-            "lastAccessed": "2024-09-20T00:46:11.267Z"
+            "creation": "2024-09-20T02:12:54.965Z",
+            "lastAccessed": "2024-09-20T02:13:02.690Z"
           },
           {
             "key": "visid_incap_1259941",
-            "value": "3+D4pVL8Q5+wTxSVvVCScsTF7GYAAAAAQUIPAAAAAAD1g9ERzgWTygv01j9JMe6e",
-            "expires": "2025-09-19T22:32:01.058Z",
+            "value": "d+joolYMQh2MTNCjRPbJ3iTa7GYAAAAAQUIPAAAAAAAiVSFOzBnXOrP/+VZWt7Wj",
+            "expires": "2025-09-19T22:32:00.282Z",
             "domain": "okeihan.net",
             "path": "/",
             "httpOnly": true,
             "hostOnly": false,
-            "creation": "2024-09-20T00:45:58.846Z",
-            "lastAccessed": "2024-09-20T00:46:11.268Z"
+            "creation": "2024-09-20T02:12:54.966Z",
+            "lastAccessed": "2024-09-20T02:13:02.691Z"
           },
           {
             "key": "incap_ses_2112_1259941",
-            "value": "OJTaO8MqABevEnf69lRPHcTF7GYAAAAAToyle75k9WhgD6JNPfV5JA==",
-            "expires": "2024-09-20T01:35:58.843Z",
+            "value": "FDOMNLISyHyQYH/69lRPHSTa7GYAAAAA5P/upVMu+Zg7w8m47MXoTQ==",
+            "expires": "2024-09-20T03:02:54.964Z",
             "domain": "okeihan.net",
             "path": "/",
             "hostOnly": false,
-            "creation": "2024-09-20T00:45:58.850Z",
-            "lastAccessed": "2024-09-20T00:46:11.269Z"
+            "creation": "2024-09-20T02:12:54.970Z",
+            "lastAccessed": "2024-09-20T02:13:02.691Z"
           },
           {
             "key": "_gid",
-            "value": "GA1.2.1637650137.1726793158",
-            "expires": "2024-09-21T00:46:10.000Z",
+            "value": "GA1.2.1286906938.1726798374",
+            "expires": "2024-09-21T02:13:02.000Z",
             "domain": "okeihan.net",
             "path": "/",
             "hostOnly": false,
-            "creation": "2024-09-20T00:45:58.851Z",
-            "lastAccessed": "2024-09-20T00:46:11.269Z"
+            "creation": "2024-09-20T02:12:54.970Z",
+            "lastAccessed": "2024-09-20T02:13:02.692Z"
+          },
+          {
+            "key": "_gcl_au",
+            "value": "1.1.745318721.1726798374",
+            "expires": "2024-12-19T02:12:54.000Z",
+            "domain": "okeihan.net",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2024-09-20T02:12:54.971Z",
+            "lastAccessed": "2024-09-20T02:13:02.692Z"
           },
           {
             "key": "_gat",
             "value": "1",
-            "expires": "2024-09-20T00:46:57.000Z",
+            "expires": "2024-09-20T02:13:54.000Z",
             "domain": "okeihan.net",
             "path": "/",
             "hostOnly": false,
-            "creation": "2024-09-20T00:45:58.851Z",
-            "lastAccessed": "2024-09-20T00:46:11.269Z"
+            "creation": "2024-09-20T02:12:54.971Z",
+            "lastAccessed": "2024-09-20T02:13:02.692Z"
           },
           {
             "key": "_gat_t2",
             "value": "1",
-            "expires": "2024-09-20T00:46:57.000Z",
+            "expires": "2024-09-20T02:13:54.000Z",
             "domain": "okeihan.net",
             "path": "/",
             "hostOnly": false,
-            "creation": "2024-09-20T00:45:58.851Z",
-            "lastAccessed": "2024-09-20T00:46:11.269Z"
+            "creation": "2024-09-20T02:12:54.971Z",
+            "lastAccessed": "2024-09-20T02:13:02.693Z"
           },
           {
             "key": "_gat_t3",
             "value": "1",
-            "expires": "2024-09-20T00:46:57.000Z",
+            "expires": "2024-09-20T02:13:54.000Z",
             "domain": "okeihan.net",
             "path": "/",
             "hostOnly": false,
-            "creation": "2024-09-20T00:45:58.852Z",
-            "lastAccessed": "2024-09-20T00:46:11.270Z"
-          },
-          {
-            "key": "_gcl_au",
-            "value": "1.1.184338929.1726793158",
-            "expires": "2024-12-19T00:45:58.000Z",
-            "domain": "okeihan.net",
-            "path": "/",
-            "hostOnly": false,
-            "creation": "2024-09-20T00:45:58.852Z",
-            "lastAccessed": "2024-09-20T00:46:11.270Z"
+            "creation": "2024-09-20T02:12:54.972Z",
+            "lastAccessed": "2024-09-20T02:13:02.693Z"
           },
           {
             "key": "_fbp",
-            "value": "fb.1.1726793158062.226579726178590857",
-            "expires": "2024-12-19T00:46:11.000Z",
+            "value": "fb.1.1726798374307.324089489656033408",
+            "expires": "2024-12-19T02:13:02.000Z",
             "domain": "okeihan.net",
             "path": "/",
             "hostOnly": false,
-            "creation": "2024-09-20T00:45:58.852Z",
-            "lastAccessed": "2024-09-20T00:46:11.270Z"
-          },
-          {
-            "key": "_ga_5T0VMYS00E",
-            "value": "GS1.1.1726793158.1.1.1726793170.0.0.0",
-            "expires": "2025-10-25T00:46:10.822Z",
-            "domain": "okeihan.net",
-            "path": "/",
-            "hostOnly": false,
-            "creation": "2024-09-20T00:45:58.853Z",
-            "lastAccessed": "2024-09-20T00:46:11.275Z"
-          },
-          {
-            "key": "_ga",
-            "value": "GA1.1.1041336919.1726793158",
-            "expires": "2025-10-25T00:46:10.845Z",
-            "domain": "okeihan.net",
-            "path": "/",
-            "hostOnly": false,
-            "creation": "2024-09-20T00:45:58.853Z",
-            "lastAccessed": "2024-09-20T00:46:11.275Z"
+            "creation": "2024-09-20T02:12:54.972Z",
+            "lastAccessed": "2024-09-20T02:13:02.693Z"
           },
           {
             "key": "_ga_DC77HL22G9",
-            "value": "GS1.1.1726793158.1.1.1726793170.0.0.0",
-            "expires": "2025-10-25T00:46:10.844Z",
+            "value": "GS1.1.1726798374.1.1.1726798382.0.0.0",
+            "expires": "2025-10-25T02:13:02.209Z",
             "domain": "okeihan.net",
             "path": "/",
             "hostOnly": false,
-            "creation": "2024-09-20T00:45:58.853Z",
-            "lastAccessed": "2024-09-20T00:46:11.276Z"
+            "creation": "2024-09-20T02:12:54.972Z",
+            "lastAccessed": "2024-09-20T02:13:02.695Z"
+          },
+          {
+            "key": "_ga",
+            "value": "GA1.2.2067392084.1726798374",
+            "expires": "2025-10-25T02:13:02.373Z",
+            "domain": "okeihan.net",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2024-09-20T02:12:54.973Z",
+            "lastAccessed": "2024-09-20T02:13:02.695Z"
           },
           {
             "key": "_yjsu_yjad",
-            "value": "1726793158.cef169b6-91f1-419b-a010-55faf14785af",
-            "expires": "2025-09-20T00:45:58.000Z",
+            "value": "1726798374.508a83cf-68a9-40dc-8528-a3a7344a54d6",
+            "expires": "2025-09-20T02:12:54.000Z",
             "domain": "okeihan.net",
             "path": "/",
             "hostOnly": false,
-            "creation": "2024-09-20T00:45:58.854Z",
-            "lastAccessed": "2024-09-20T00:46:11.271Z"
+            "creation": "2024-09-20T02:12:54.973Z",
+            "lastAccessed": "2024-09-20T02:13:02.693Z"
+          },
+          {
+            "key": "_ga_5T0VMYS00E",
+            "value": "GS1.1.1726798374.1.1.1726798382.0.0.0",
+            "expires": "2025-10-25T02:13:02.155Z",
+            "domain": "okeihan.net",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2024-09-20T02:12:54.973Z",
+            "lastAccessed": "2024-09-20T02:13:02.695Z"
           },
           {
             "key": "_ga_Z0VE5RL8JT",
-            "value": "GS1.2.1726793158.1.1.1726793171.0.0.0",
-            "expires": "2025-10-25T00:46:11.068Z",
+            "value": "GS1.2.1726798374.1.1.1726798382.0.0.0",
+            "expires": "2025-10-25T02:13:02.559Z",
             "domain": "okeihan.net",
             "path": "/",
             "hostOnly": false,
-            "creation": "2024-09-20T00:45:58.855Z",
-            "lastAccessed": "2024-09-20T00:46:11.276Z"
+            "creation": "2024-09-20T02:12:54.974Z",
+            "lastAccessed": "2024-09-20T02:13:02.696Z"
           }
         ]
       },
       "userData": {},
       "maxErrorScore": 3,
       "errorScoreDecrement": 0.5,
-      "expiresAt": "2024-09-20T01:35:56.627Z",
-      "createdAt": "2024-09-20T00:45:56.627Z",
-      "usageCount": 16,
+      "expiresAt": "2024-09-20T03:02:52.630Z",
+      "createdAt": "2024-09-20T02:12:52.630Z",
+      "usageCount": 14,
       "maxUsageCount": 50,
       "errorScore": 0
     },
     {
-      "id": "session_AlHzcuqxwJ",
+      "id": "session_Z8iEACJn6p",
       "cookieJar": {
         "version": "tough-cookie@4.1.4",
         "storeType": "MemoryCookieStore",
@@ -198,14 +198,14 @@
       "userData": {},
       "maxErrorScore": 3,
       "errorScoreDecrement": 0.5,
-      "expiresAt": "2024-09-20T01:36:00.915Z",
-      "createdAt": "2024-09-20T00:46:00.915Z",
+      "expiresAt": "2024-09-20T03:02:55.553Z",
+      "createdAt": "2024-09-20T02:12:55.553Z",
       "usageCount": 0,
       "maxUsageCount": 50,
       "errorScore": 0
     },
     {
-      "id": "session_XYXOU70Qbx",
+      "id": "session_sQTdCbeQtA",
       "cookieJar": {
         "version": "tough-cookie@4.1.4",
         "storeType": "MemoryCookieStore",
@@ -218,14 +218,14 @@
       "userData": {},
       "maxErrorScore": 3,
       "errorScoreDecrement": 0.5,
-      "expiresAt": "2024-09-20T01:36:00.917Z",
-      "createdAt": "2024-09-20T00:46:00.917Z",
+      "expiresAt": "2024-09-20T03:02:55.554Z",
+      "createdAt": "2024-09-20T02:12:55.554Z",
       "usageCount": 0,
       "maxUsageCount": 50,
       "errorScore": 0
     },
     {
-      "id": "session_84t6MrGF0w",
+      "id": "session_22fJn8eLpY",
       "cookieJar": {
         "version": "tough-cookie@4.1.4",
         "storeType": "MemoryCookieStore",
@@ -238,14 +238,14 @@
       "userData": {},
       "maxErrorScore": 3,
       "errorScoreDecrement": 0.5,
-      "expiresAt": "2024-09-20T01:36:04.502Z",
-      "createdAt": "2024-09-20T00:46:04.502Z",
+      "expiresAt": "2024-09-20T03:02:57.518Z",
+      "createdAt": "2024-09-20T02:12:57.518Z",
       "usageCount": 0,
       "maxUsageCount": 50,
       "errorScore": 0
     },
     {
-      "id": "session_4YFftK6Euv",
+      "id": "session_EHvhOdVARY",
       "cookieJar": {
         "version": "tough-cookie@4.1.4",
         "storeType": "MemoryCookieStore",
@@ -258,14 +258,14 @@
       "userData": {},
       "maxErrorScore": 3,
       "errorScoreDecrement": 0.5,
-      "expiresAt": "2024-09-20T01:36:04.891Z",
-      "createdAt": "2024-09-20T00:46:04.891Z",
+      "expiresAt": "2024-09-20T03:02:57.823Z",
+      "createdAt": "2024-09-20T02:12:57.823Z",
       "usageCount": 0,
       "maxUsageCount": 50,
       "errorScore": 0
     },
     {
-      "id": "session_EP1efz7Png",
+      "id": "session_hsUzNcwa3x",
       "cookieJar": {
         "version": "tough-cookie@4.1.4",
         "storeType": "MemoryCookieStore",
@@ -278,14 +278,14 @@
       "userData": {},
       "maxErrorScore": 3,
       "errorScoreDecrement": 0.5,
-      "expiresAt": "2024-09-20T01:36:06.664Z",
-      "createdAt": "2024-09-20T00:46:06.664Z",
+      "expiresAt": "2024-09-20T03:02:59.518Z",
+      "createdAt": "2024-09-20T02:12:59.518Z",
       "usageCount": 0,
       "maxUsageCount": 50,
       "errorScore": 0
     },
     {
-      "id": "session_exFbr5YJrg",
+      "id": "session_hq7GpYTbmz",
       "cookieJar": {
         "version": "tough-cookie@4.1.4",
         "storeType": "MemoryCookieStore",
@@ -298,14 +298,14 @@
       "userData": {},
       "maxErrorScore": 3,
       "errorScoreDecrement": 0.5,
-      "expiresAt": "2024-09-20T01:36:08.209Z",
-      "createdAt": "2024-09-20T00:46:08.209Z",
+      "expiresAt": "2024-09-20T03:02:59.851Z",
+      "createdAt": "2024-09-20T02:12:59.851Z",
       "usageCount": 0,
       "maxUsageCount": 50,
       "errorScore": 0
     },
     {
-      "id": "session_FElFntqPFM",
+      "id": "session_ttEz7YZUJU",
       "cookieJar": {
         "version": "tough-cookie@4.1.4",
         "storeType": "MemoryCookieStore",
@@ -318,28 +318,8 @@
       "userData": {},
       "maxErrorScore": 3,
       "errorScoreDecrement": 0.5,
-      "expiresAt": "2024-09-20T01:36:08.536Z",
-      "createdAt": "2024-09-20T00:46:08.536Z",
-      "usageCount": 0,
-      "maxUsageCount": 50,
-      "errorScore": 0
-    },
-    {
-      "id": "session_jSByjGJ3nr",
-      "cookieJar": {
-        "version": "tough-cookie@4.1.4",
-        "storeType": "MemoryCookieStore",
-        "rejectPublicSuffixes": true,
-        "enableLooseMode": false,
-        "allowSpecialUseDomain": true,
-        "prefixSecurity": "silent",
-        "cookies": []
-      },
-      "userData": {},
-      "maxErrorScore": 3,
-      "errorScoreDecrement": 0.5,
-      "expiresAt": "2024-09-20T01:36:09.814Z",
-      "createdAt": "2024-09-20T00:46:09.814Z",
+      "expiresAt": "2024-09-20T03:03:01.226Z",
+      "createdAt": "2024-09-20T02:13:01.226Z",
       "usageCount": 0,
       "maxUsageCount": 50,
       "errorScore": 0
