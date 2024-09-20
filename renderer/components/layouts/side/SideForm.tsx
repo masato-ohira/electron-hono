@@ -14,8 +14,10 @@ const MenuHead = twc.h2`
 `
 
 const inputClass = cn(`
-  bg-white text-gray-900
-  placeholder:text-gray-900/30
+  text-white
+  bg-white/10
+  border-white/40
+  placeholder:text-white/30
 `)
 
 export const SideForm = () => {
