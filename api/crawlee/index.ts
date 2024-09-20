@@ -7,8 +7,8 @@ import {
 import { Hono } from 'hono'
 import { streamText } from 'hono/streaming'
 
+import type { CrawleeProps } from '@ts/crawlee'
 import { pageInfo } from './pageInfo'
-import type { CrawleeProps } from './types'
 
 let cancelCrawl = false
 
@@ -69,10 +69,11 @@ const crawlerRun = async (props: CrawleeProps) => {
 
 const app = new Hono()
 app.get('/', async (c) => {
+  const query = c.req.query()
   return streamText(c, async (stream) => {
     await crawlerRun({
-      startUrl: 'https://www.okeihan.net/recommend/hatsumoude/',
-      selector: '#react-app',
+      startUrl: query?.url,
+      selector: 'body',
       stream,
     })
   })

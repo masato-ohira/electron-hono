@@ -1,3 +1,16 @@
+import type { StreamingApi } from 'hono/utils/stream'
+
+export type CrawleeProps = {
+  startUrl: string
+  stream: StreamingApi
+  selector?: string
+  waitFor?: number
+  basicUser?: string
+  basicPass?: string
+}
+
+export type CrawleeForm = Omit<CrawleeProps, 'stream'>
+
 export type PageData = {
   url: string
   hasGtm: boolean

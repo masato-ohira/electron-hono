@@ -20,9 +20,7 @@ class MyDocument extends Document {
       <Html
         lang={'ja'}
         className={`
-          scrollbar-thumb-primary
-          scrollbar-track-gray-200
-          scrollbar-thin
+          overflow-hidden
         `}
       >
         <Head>

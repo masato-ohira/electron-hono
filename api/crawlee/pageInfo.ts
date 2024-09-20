@@ -1,5 +1,5 @@
+import type { CrawleeProps } from '@ts/crawlee'
 import type { Page } from 'playwright'
-import type { CrawleeProps } from './types'
 
 type Props = CrawleeProps & {
   page: Page

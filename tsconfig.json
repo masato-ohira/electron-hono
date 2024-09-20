@@ -19,6 +19,7 @@
       "@/*": ["./renderer/*"],
       "@c/*": ["./renderer/components/*"],
       "@ui/*": ["./renderer/components/ui/*"],
+      "@ts/*": ["./@types/*"],
       "@@/*": ["./*"]
     }
   },

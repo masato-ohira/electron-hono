@@ -1,18 +1,36 @@
 import { Button } from '@ui/button'
 import { Input } from '@ui/input'
-import Link from 'next/link'
-import { MdMenu } from 'react-icons/md'
 import { toast } from 'sonner'
-import { useSWRConfig } from 'swr'
+
+import { useCrawlee } from '@/hooks/useCrawlee'
+import type { CrawleeForm } from '@ts/crawlee'
+import { useFormContext } from 'react-hook-form'
+
+import { isString } from 'lodash-es'
+import { FaRegCircleStop } from 'react-icons/fa6'
+import { LuLoader2 } from 'react-icons/lu'
+import { MdSaveAlt } from 'react-icons/md'
 
 export const Header = () => {
-  const { mutate } = useSWRConfig()
-  const runToast = async () => {
-    // await window.myApi.saveJson()
-    toast('Event has been created.', {
-      closeButton: true,
-    })
-    mutate('json/data.json')
+  const { crawleeStart, crawleeStop, loading, canceling } = useCrawlee()
+  const { register, watch, getValues } = useFormContext<CrawleeForm>()
+
+  const isDisabled = () => {
+    const watchUrl = watch('startUrl')
+    if (isString(watchUrl) && watchUrl.startsWith('http')) return false
+    if (canceling) return true
+    return true
+  }
+
+  const buttonInner = () => {
+    switch (true) {
+      case canceling:
+        return <LuLoader2 className={'animate-spin'} />
+      case loading:
+        return <FaRegCircleStop />
+      default:
+        return <>クロール開始</>
+    }
   }
 
   return (
@@ -28,35 +46,42 @@ export const Header = () => {
         bg-gray-100
       `}
     >
-      <div className="hstack gap-6">
-        <MdMenu className={'text-xl text-gray-400'} />
-        <button
-          type={'button'}
-          onClick={() => {
-            window.location.reload()
-          }}
-        >
-          <p>Home</p>
-        </button>
-      </div>
-
-      <div className="hstack justify-end flex-1 gap-4">
+      <div className="hstack gap-4">
         <Input
+          {...register('startUrl')}
           className={`
-            w-[50%] h-8
+            w-[33vw] h-8
             bg-white
             placeholder:text-foreground/30
           `}
-          placeholder={'対象URLを入力'}
+          placeholder={'対象URLを入力（https://example.com）'}
         />
         <Button
-          className={'h-8'}
+          className={'h-8 w-40'}
           type={'button'}
+          disabled={isDisabled()}
           onClick={() => {
-            runToast()
+            if (loading) {
+              crawleeStop()
+            } else {
+              crawleeStart(getValues('startUrl'))
+            }
           }}
         >
-          クロール開始
+          {buttonInner()}
+        </Button>
+
+        <Button
+          className={'h-8 w-40 gap-2'}
+          variant={'secondary'}
+          type={'button'}
+        >
+          <MdSaveAlt
+            className={`
+              text-xl
+            `}
+          />
+          CSV保存
         </Button>
       </div>
     </header>
