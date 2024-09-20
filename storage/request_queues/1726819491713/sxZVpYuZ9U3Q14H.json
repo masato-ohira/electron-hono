@@ -1,0 +1,9 @@
+{
+	"id": "sxZVpYuZ9U3Q14H",
+	"json": "{\"id\":\"sxZVpYuZ9U3Q14H\",\"url\":\"https://www.okeihan.net/recommend/hatsumoude/detail/02_osakatenmangu.php\",\"loadedUrl\":\"https://www.okeihan.net/recommend/hatsumoude/detail/02_osakatenmangu.php\",\"uniqueKey\":\"https://www.okeihan.net/recommend/hatsumoude/detail/02_osakatenmangu.php\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":1,\"errorMessages\":[\"page.waitForTimeout: Target page, context or browser has been closed\\n    at pageInfo (/home/oohira/study/electron/electron-hono/app/background.js:206:14)\\n    at /home/oohira/study/electron/electron-hono/async /home/oohira/study/electron/electron-hono/app/background.js:118:29\\n    at async wrap (/home/oohira/study/electron/electron-hono/node_modules/@apify/timeout/cjs/index.cjs:54:21)\"],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":5}}}",
+	"method": "GET",
+	"orderNo": 1726819524319,
+	"retryCount": 1,
+	"uniqueKey": "https://www.okeihan.net/recommend/hatsumoude/detail/02_osakatenmangu.php",
+	"url": "https://www.okeihan.net/recommend/hatsumoude/detail/02_osakatenmangu.php"
+}

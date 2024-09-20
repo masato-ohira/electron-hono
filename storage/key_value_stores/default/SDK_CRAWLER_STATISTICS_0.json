@@ -1,36 +1,54 @@
 {
-  "requestsFinished": 6,
+  "requestsFinished": 3,
   "requestsFailed": 0,
   "requestsRetries": 0,
   "requestsFailedPerMinute": 0,
-  "requestsFinishedPerMinute": 33,
-  "requestMinDurationMillis": 1992,
-  "requestMaxDurationMillis": 2903,
+  "requestsFinishedPerMinute": 22,
+  "requestMinDurationMillis": 2086,
+  "requestMaxDurationMillis": 3180,
   "requestTotalFailedDurationMillis": 0,
-  "requestTotalFinishedDurationMillis": 13506,
-  "crawlerStartedAt": "2024-09-20T02:12:52.593Z",
-  "crawlerFinishedAt": "2024-09-20T02:13:03.359Z",
-  "statsPersistedAt": "2024-09-20T02:13:03.359Z",
-  "crawlerRuntimeMillis": 10955,
-  "crawlerLastStartTimestamp": 1726798372404,
+  "requestTotalFinishedDurationMillis": 8187,
+  "crawlerStartedAt": "2024-09-20T08:07:55.857Z",
+  "crawlerFinishedAt": "2024-09-20T08:08:03.697Z",
+  "statsPersistedAt": "2024-09-20T08:08:03.698Z",
+  "crawlerRuntimeMillis": 8075,
+  "crawlerLastStartTimestamp": 1726819675623,
   "requestRetryHistogram": [
-    6
+    3
   ],
   "statsId": 0,
   "requestAvgFailedDurationMillis": null,
-  "requestAvgFinishedDurationMillis": 2251,
-  "requestTotalDurationMillis": 13506,
-  "requestsTotal": 6,
+  "requestAvgFinishedDurationMillis": 2729,
+  "requestTotalDurationMillis": 8187,
+  "requestsTotal": 3,
   "requestsWithStatusCode": {
-    "200": 8
+    "200": 4
   },
   "errors": {},
   "retryErrors": {
-    "at /home/oohira/study/electron/electron-hono/app/background.js:125:115": {
+    "at /home/oohira/study/electron/electron-hono/app/background.js:133:115": {
       "missing error code": {
         "TypeError": {
           "Cannot read properties of undefined (reading 'call')": {
-            "count": 2
+            "count": 1
+          }
+        }
+      }
+    },
+    "/home/oohira/study/electron/electron-hono/node_modules/@crawlee/playwright/internals/utils/playwright-utils.js:165:17": {
+      "missing error code": {
+        "Error": {
+          "page.goto: Target page, context or browser has been closed": {
+            "count": 1
+          }
+        }
+      }
+    },
+    "/home/oohira/study/electron/electron-hono/node_modules/@crawlee/browser-pool/browser-pool.js:399:19": {
+      "missing error code": {
+        "Error": {
+          "browserController.newPage() failed: r3EygpkKb8hmHndFlQhSl": {
+            "count": 1
           }
         }
       }

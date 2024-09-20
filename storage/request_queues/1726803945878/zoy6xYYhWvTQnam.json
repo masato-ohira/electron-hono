@@ -1,0 +1,9 @@
+{
+	"id": "zoy6xYYhWvTQnam",
+	"json": "{\"id\":\"zoy6xYYhWvTQnam\",\"url\":\"https://www.okeihan.net/recommend/hatsumoude/spot_map/\",\"loadedUrl\":\"https://www.okeihan.net/recommend/hatsumoude/spot_map/\",\"uniqueKey\":\"https://www.okeihan.net/recommend/hatsumoude/spot_map\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":4,\"errorMessages\":[\"TypeError: Cannot read properties of undefined (reading 'call')\\n    at /home/oohira/study/electron/electron-hono/app/background.js:121:115\\n    at async wrap (/home/oohira/study/electron/electron-hono/node_modules/@apify/timeout/cjs/index.cjs:54:21)\",\"TypeError: Cannot read properties of undefined (reading 'call')\\n    at /home/oohira/study/electron/electron-hono/app/background.js:121:115\\n    at async wrap (/home/oohira/study/electron/electron-hono/node_modules/@apify/timeout/cjs/index.cjs:54:21)\",\"TypeError: Cannot read properties of undefined (reading 'call')\\n    at /home/oohira/study/electron/electron-hono/app/background.js:121:115\\n    at async wrap (/home/oohira/study/electron/electron-hono/node_modules/@apify/timeout/cjs/index.cjs:54:21)\",\"TypeError: Cannot read properties of undefined (reading 'call')\\n    at /home/oohira/study/electron/electron-hono/app/background.js:121:115\\n    at async wrap (/home/oohira/study/electron/electron-hono/node_modules/@apify/timeout/cjs/index.cjs:54:21)\",\"TypeError: Cannot read properties of undefined (reading 'call')\\n    at /home/oohira/study/electron/electron-hono/app/background.js:121:115\\n    at async wrap (/home/oohira/study/electron/electron-hono/node_modules/@apify/timeout/cjs/index.cjs:54:21)\"],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":5}},\"handledAt\":\"2024-09-20T03:46:19.610Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 4,
+	"uniqueKey": "https://www.okeihan.net/recommend/hatsumoude/spot_map",
+	"url": "https://www.okeihan.net/recommend/hatsumoude/spot_map/"
+}

@@ -1,5 +1,6 @@
 import {
   PlaywrightCrawler,
+  type PlaywrightLaunchContext,
   RequestQueue,
   createPlaywrightRouter,
 } from 'crawlee'
@@ -9,24 +10,29 @@ import { streamText } from 'hono/streaming'
 import { pageInfo } from './pageInfo'
 import type { CrawleeProps } from './types'
 
-export const crawlerRun = async (props: CrawleeProps) => {
+let cancelCrawl = false
+
+const crawlerRun = async (props: CrawleeProps) => {
   const { stream } = props
   const queue = await RequestQueue.open(`${Date.now()}`)
   const router = createPlaywrightRouter()
+  cancelCrawl = false
+
+  const launchOptions: PlaywrightLaunchContext['launchOptions'] = {
+    channel: 'chrome',
+    viewport: { width: 1920, height: 1080 },
+    ignoreHTTPSErrors: true,
+  }
 
   const crawler = new PlaywrightCrawler({
     requestHandler: router,
     requestQueue: queue,
     maxRequestRetries: 4,
     maxConcurrency: 4,
-    maxRequestsPerCrawl: 5,
+    maxRequestsPerCrawl: 100,
     launchContext: {
       useChrome: true,
-      launchOptions: {
-        channel: 'chrome',
-        viewport: { width: 1920, height: 1080 },
-        ignoreHTTPSErrors: true,
-      },
+      launchOptions,
     },
   })
 
@@ -36,11 +42,14 @@ export const crawlerRun = async (props: CrawleeProps) => {
 
   // ページ毎の処理を追加
   router.addDefaultHandler(async ({ page, pushData }) => {
-    const { title, hasGtm, links } = await pageInfo({ ...props, page })
+    if (cancelCrawl) {
+      await crawler.teardown()
+      return
+    }
+    const { links, ...results } = await pageInfo({ ...props, page })
     await pushData({
       url: page.url(),
-      title,
-      hasGtm,
+      ...results,
     })
 
     const data = await crawler.getData()
@@ -66,6 +75,13 @@ app.get('/', async (c) => {
       selector: '#react-app',
       stream,
     })
+  })
+})
+
+app.post('/cancel', (c) => {
+  cancelCrawl = true // キャンセルフラグを立てる
+  return c.json({
+    info: 'Crawl canceled.',
   })
 })
 

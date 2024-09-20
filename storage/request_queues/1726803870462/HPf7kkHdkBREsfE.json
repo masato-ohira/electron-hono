@@ -1,0 +1,9 @@
+{
+	"id": "HPf7kkHdkBREsfE",
+	"json": "{\"id\":\"HPf7kkHdkBREsfE\",\"url\":\"https://www.okeihan.net/recommend/hatsumoude/detail/02_takebetaisya.php\",\"uniqueKey\":\"https://www.okeihan.net/recommend/hatsumoude/detail/02_takebetaisya.php\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":1,\"errorMessages\":[\"browserContext.addCookies: Protocol error (Storage.setCookies): Browser context management is not supported.\\n    at PlaywrightController._setCookies (/home/oohira/study/electron/electron-hono/node_modules/@crawlee/browser-pool/playwright/playwright-controller.js:129:24)\\n    at PlaywrightController.setCookies (/home/oohira/study/electron/electron-hono/node_modules/@crawlee/browser-pool/abstract-classes/browser-controller.js:198:21)\\n    at PlaywrightCrawler._applyCookies (/home/oohira/study/electron/electron-hono/node_modules/@crawlee/browser/internals/browser-crawler.js:346:33)\\n    at PlaywrightCrawler._handleNavigation (/home/oohira/study/electron/electron-hono/node_modules/@crawlee/browser/internals/browser-crawler.js:328:20)\\n    at async PlaywrightCrawler._runRequestHandler (/home/oohira/study/electron/electron-hono/node_modules/@crawlee/browser/internals/browser-crawler.js:259:13)\\n    at async PlaywrightCrawler._runRequestHandler (/home/oohira/study/electron/electron-hono/node_modules/@crawlee/playwright/internals/playwright-crawler.js:114:9)\\n    at async wrap (/home/oohira/study/electron/electron-hono/node_modules/@apify/timeout/cjs/index.cjs:54:21)\"],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":5}}}",
+	"method": "GET",
+	"orderNo": 1726803889294,
+	"retryCount": 1,
+	"uniqueKey": "https://www.okeihan.net/recommend/hatsumoude/detail/02_takebetaisya.php",
+	"url": "https://www.okeihan.net/recommend/hatsumoude/detail/02_takebetaisya.php"
+}

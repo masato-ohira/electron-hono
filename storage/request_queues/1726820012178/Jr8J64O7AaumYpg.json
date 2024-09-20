@@ -1,0 +1,9 @@
+{
+	"id": "Jr8J64O7AaumYpg",
+	"json": "{\"id\":\"Jr8J64O7AaumYpg\",\"url\":\"https://www.okeihan.net/recommend/hatsumoude/detail/28_yukijinja.php\",\"uniqueKey\":\"https://www.okeihan.net/recommend/hatsumoude/detail/28_yukijinja.php\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":1,\"errorMessages\":[\"Error: browserController.newPage() failed: U7y1n1j9naeonU_aHhWVZ\\nCause:browserContext.newPage: Target page, context or browser has been closed.\\n    at BrowserPool._createPageForBrowser (/home/oohira/study/electron/electron-hono/node_modules/@crawlee/browser-pool/browser-pool.js:399:19)\"],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":5}}}",
+	"method": "GET",
+	"orderNo": 1726820025958,
+	"retryCount": 1,
+	"uniqueKey": "https://www.okeihan.net/recommend/hatsumoude/detail/28_yukijinja.php",
+	"url": "https://www.okeihan.net/recommend/hatsumoude/detail/28_yukijinja.php"
+}

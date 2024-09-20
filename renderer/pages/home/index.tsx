@@ -1,66 +1,103 @@
+import { streamDecode } from '@/utils/streamDecode'
+import { useState } from 'react'
+
+import type { CrawleeResponse } from '@/@types'
+import { cn } from '@/utils/cn'
+import { honoApi } from '@/utils/fetchers'
+import { toast } from 'sonner'
+
+import { DataTable } from '@c/views/home/DataTable'
+import { columns } from '@c/views/home/columns'
 import { Button } from '@ui/button'
-import { useEffect, useState } from 'react'
-import useSWR from 'swr'
+import { uniqBy } from 'lodash-es'
+import { LuLoader2 } from 'react-icons/lu'
 
 export default function HomePage() {
   const [loading, setLoading] = useState(false)
-  const [messages, setMessages] = useState<string>('')
-  const [results, setResults] = useState<any[]>([])
-  const fetchStart = async () => {
-    // setLoading(true)
-    // const res = await fetch('http://localhost:8787/api/crawlee')
-    // const json = await res.json()
-    // setLoading(false)
-    // setResults(json)
+  const [canceling, setCanceling] = useState(false)
+  const [results, setResults] = useState<CrawleeResponse | undefined>()
 
+  const fetchStart = async () => {
     getStream()
   }
 
+  const loadingText = () => {
+    switch (true) {
+      case canceling:
+        return 'キャンセルしています...'
+      case loading:
+        return 'しばらくお待ち下さい...'
+      default:
+        return ''
+    }
+  }
+
   const getStream = async () => {
-    const response = await fetch('http://localhost:8787/api/crawlee')
-    const reader = response.body?.getReader()
+    setLoading(true)
+    setResults(undefined)
+    const res = await fetch(honoApi('/api/crawlee'))
+    const reader = res.body?.getReader()
+
     if (!reader) return
-    const decoder = new TextDecoder()
     while (true) {
-      // レスポンスのストリーミングを読み込む
       const { done, value } = await reader.read()
       // done が true になったらストリーミングが完了したことを意味する
       if (done) {
         console.log('isDone')
-        // setIsGenerating(false);
+        setLoading(false)
+        setCanceling(false)
+        toast('処理が完了しました', {
+          closeButton: true,
+        })
         return
       }
       if (!value) continue
-      const lines = decoder.decode(value)
-      const chunks = lines
-        .split('data: ') // 各行は data: というキーワードで始まる
-        .map((line) => line.trim())
-        .filter((s) => s) // 余計な空行を取り除く
-
-      console.log({ chunks })
+      const chunks = streamDecode(value)
       for (const chunk of chunks) {
-        // 文章のチャンクが到着するたびにチャットの履歴の最後の要素（AI アシスタントのメッセージ）に追加する
-        setMessages(chunk)
+        setResults(JSON.parse(chunk) as CrawleeResponse)
       }
     }
   }
 
-  // useEffect(() => {
-  //   getStream()
-  // }, [])
-
-  // const { data, isLoading } = useSWR('/api/json', fetcher)
-  // if (isLoading) return <>loading...</>
   return (
-    <div className={``}>
-      <Button onClick={fetchStart}>クロール開始</Button>
-      <div className={'mt-3'}>{messages}</div>
+    <div className={`space-y-3`}>
+      <div className="hstack gap-6">
+        <Button
+          onClick={fetchStart}
+          className={cn(`
+          w-40
+          ${loading ? 'pointer-events-none' : ''}
+        `)}
+        >
+          {loading ? (
+            <LuLoader2 className={'animate-spin'} />
+          ) : (
+            <>クロール開始</>
+          )}
+        </Button>
 
-      {/* <Button onClick={fetchStart}>クロール開始</Button>
+        {loading && (
+          <Button
+            variant={'secondary'}
+            disabled={canceling}
+            onClick={async () => {
+              setCanceling(true)
+              await fetch(honoApi('/api/crawlee/cancel'), {
+                method: 'POST',
+              })
+            }}
+            className={`w-40`}
+          >
+            キャンセル
+          </Button>
+        )}
+      </div>
 
-      <div className="mt-4">
-        {loading ? <div>loading...</div> : <div>{JSON.stringify(results)}</div>}
-      </div> */}
+      {(loading || canceling) && <div>{loadingText()}</div>}
+
+      {results && (
+        <DataTable columns={columns} data={uniqBy(results.items, 'url')} />
+      )}
     </div>
   )
 }

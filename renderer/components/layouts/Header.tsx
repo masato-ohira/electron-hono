@@ -1,5 +1,6 @@
 import { Button } from '@ui/button'
 import { Input } from '@ui/input'
+import Link from 'next/link'
 import { MdMenu } from 'react-icons/md'
 import { toast } from 'sonner'
 import { useSWRConfig } from 'swr'
@@ -29,7 +30,14 @@ export const Header = () => {
     >
       <div className="hstack gap-6">
         <MdMenu className={'text-xl text-gray-400'} />
-        <p>Home</p>
+        <button
+          type={'button'}
+          onClick={() => {
+            window.location.reload()
+          }}
+        >
+          <p>Home</p>
+        </button>
       </div>
 
       <div className="hstack justify-end flex-1 gap-4">

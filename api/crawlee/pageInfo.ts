@@ -8,8 +8,19 @@ type Props = CrawleeProps & {
 export const pageInfo = async ({ page, waitFor, selector }: Props) => {
   // page.evaluateなどが
   // electronで機能しないためevalでwrapする必要がある
+  // tsが効かず今のところ綺麗な方法がない
 
   console.log({ load: page.url() })
+
+  const errors: any[] = []
+  const responses: any[] = []
+
+  page.on('pageerror', (exception) => {
+    errors.push(exception)
+  })
+  page.on('response', (response) => {
+    responses.push(response)
+  })
 
   // 特定の要素がレンダリングされるまで待機
   const elm = selector || 'body'
@@ -18,9 +29,42 @@ export const pageInfo = async ({ page, waitFor, selector }: Props) => {
     return div && div.innerHTML.trim() !== ''
   })`)
 
+  // ページを下までスクロール
+  await eval(`page.evaluate(() => {
+    window.scrollTo(0, document.body.scrollHeight)
+  })`)
+
   await page.waitForTimeout(waitFor || 500)
 
+  const getMeta = async (target: string) => {
+    try {
+      return await page.$eval(target, (element) => {
+        return element.getAttribute('content')
+      })
+    } catch (error) {
+      console.error(error)
+      return ''
+    }
+  }
+
+  // meta情報の取得
   const title = await page.title()
+  const description = await getMeta(`meta[name="description"]`)
+  const keywords = await getMeta(`meta[name="keywords"]`)
+  const ogUrl = await getMeta(`meta[property="og:url"]`)
+  const ogImage = await getMeta(`meta[property="og:image"]`)
+
+  // エラーのチェック
+  let no404 = true
+  console.log({ responses })
+  for (const response of responses) {
+    if (response.status() === 404) {
+      no404 = false
+      break
+    }
+  }
+
+  const noError = errors.length === 0
 
   // gtmの存在確認
   const hasGtm = await eval(`page.evaluate(() => {
@@ -38,7 +82,13 @@ export const pageInfo = async ({ page, waitFor, selector }: Props) => {
 
   return {
     title,
+    description,
+    keywords,
     hasGtm,
+    ogUrl,
+    ogImage,
+    // no404,
+    // noError,
     links,
   }
 }

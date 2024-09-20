@@ -16,6 +16,7 @@
     "@hono/node-server": "^1.13.0",
     "@radix-ui/react-progress": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.2",
     "@tanstack/react-table": "^8.20.5",
     "axios": "^1.7.7",
     "crawlee": "^3.11.3",
