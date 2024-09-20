@@ -1,14 +1,11 @@
-import path from 'node:path'
 import axios from 'axios'
-import fs from 'fs-extra'
 import { Hono } from 'hono'
+
+import dataJson from './data.json'
 
 const app = new Hono()
 app.get('/', (c) => {
-  const fullPath = path.join(__dirname, '..', 'main/api/json/data.json')
-  // console.log({ dir })
-  const json = fs.readJSONSync(fullPath)
-  return c.json(json)
+  return c.json(dataJson)
 })
 
 app.get('/posts', async (c) => {

@@ -1,5 +1,5 @@
-import type { PageData } from '@/@types'
 import type { ColumnDef } from '@tanstack/react-table'
+import type { PageData } from '@ts/crawlee'
 
 const keys: (keyof PageData)[] = [
   'url',

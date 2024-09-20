@@ -7,7 +7,7 @@ import {
 import { Hono } from 'hono'
 import { streamText } from 'hono/streaming'
 
-import type { CrawleeProps } from '@ts/crawlee'
+import type { CrawleeForm, CrawleeProps } from '@ts/crawlee'
 import { pageInfo } from './pageInfo'
 
 let cancelCrawl = false
@@ -18,18 +18,30 @@ const crawlerRun = async (props: CrawleeProps) => {
   const router = createPlaywrightRouter()
   cancelCrawl = false
 
-  const launchOptions: PlaywrightLaunchContext['launchOptions'] = {
+  let launchOptions: PlaywrightLaunchContext['launchOptions'] = {
     channel: 'chrome',
     viewport: { width: 1920, height: 1080 },
     ignoreHTTPSErrors: true,
   }
+
+  if (props.basicUser && props.basicPass) {
+    launchOptions = {
+      ...launchOptions,
+      httpCredentials: {
+        username: props.basicUser,
+        password: props.basicPass,
+      },
+    }
+  }
+
+  const maxRequests = Number(props.maxRequests)
 
   const crawler = new PlaywrightCrawler({
     requestHandler: router,
     requestQueue: queue,
     maxRequestRetries: 4,
     maxConcurrency: 4,
-    maxRequestsPerCrawl: 100,
+    maxRequestsPerCrawl: Number.isFinite(maxRequests) ? maxRequests : 100,
     launchContext: {
       useChrome: true,
       launchOptions,
@@ -69,11 +81,11 @@ const crawlerRun = async (props: CrawleeProps) => {
 
 const app = new Hono()
 app.get('/', async (c) => {
-  const query = c.req.query()
+  const query = c.req.query() as Partial<CrawleeForm>
   return streamText(c, async (stream) => {
     await crawlerRun({
-      startUrl: query?.url,
-      selector: 'body',
+      ...query,
+      startUrl: query.startUrl,
       stream,
     })
   })

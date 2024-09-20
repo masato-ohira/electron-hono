@@ -20,14 +20,8 @@ if (isProd) {
   })
 
   const mainWindow = createWindow('main', {
-    width: 1000,
+    width: 1024,
     height: 600,
-    // webPreferences: {
-    //   nodeIntegration: true, // これを有効化
-    //   nodeIntegrationInWorker: true,
-    //   webSecurity: false,
-    //   contextIsolation: true,
-    // },
   })
 
   if (isProd) {

@@ -7,6 +7,7 @@ export type CrawleeProps = {
   waitFor?: number
   basicUser?: string
   basicPass?: string
+  maxRequests?: number
 }
 
 export type CrawleeForm = Omit<CrawleeProps, 'stream'>

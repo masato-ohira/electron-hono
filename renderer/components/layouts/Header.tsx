@@ -6,13 +6,25 @@ import { useCrawlee } from '@/hooks/useCrawlee'
 import type { CrawleeForm } from '@ts/crawlee'
 import { useFormContext } from 'react-hook-form'
 
+import { cn } from '@/utils/cn'
 import { isString } from 'lodash-es'
 import { FaRegCircleStop } from 'react-icons/fa6'
 import { LuLoader2 } from 'react-icons/lu'
 import { MdSaveAlt } from 'react-icons/md'
 
+const btnClass = cn(` w-36 h-8 gap-3`)
+
 export const Header = () => {
-  const { crawleeStart, crawleeStop, loading, canceling } = useCrawlee()
+  const {
+    //
+    crawleeStart,
+    crawleeStop,
+    saveCsv,
+    loading,
+    canceling,
+    results,
+  } = useCrawlee()
+
   const { register, watch, getValues } = useFormContext<CrawleeForm>()
 
   const isDisabled = () => {
@@ -20,6 +32,16 @@ export const Header = () => {
     if (isString(watchUrl) && watchUrl.startsWith('http')) return false
     if (canceling) return true
     return true
+  }
+
+  const showCsv = () => {
+    if (loading || canceling || !results) {
+      return false
+    }
+    if (results.items.length > 0) {
+      return true
+    }
+    return false
   }
 
   const buttonInner = () => {
@@ -47,42 +69,48 @@ export const Header = () => {
       `}
     >
       <div className="hstack gap-4">
-        <Input
-          {...register('startUrl')}
-          className={`
+        <div className="hstack">
+          <p className={'text-sm'}>対象URL</p>
+          <Input
+            {...register('startUrl')}
+            className={`
             w-[33vw] h-8
             bg-white
             placeholder:text-foreground/30
           `}
-          placeholder={'対象URLを入力（https://example.com）'}
-        />
+            placeholder={'https://example.com'}
+          />
+        </div>
         <Button
-          className={'h-8 w-40'}
+          className={btnClass}
           type={'button'}
           disabled={isDisabled()}
           onClick={() => {
             if (loading) {
               crawleeStop()
             } else {
-              crawleeStart(getValues('startUrl'))
+              crawleeStart()
             }
           }}
         >
           {buttonInner()}
         </Button>
 
-        <Button
-          className={'h-8 w-40 gap-2'}
-          variant={'secondary'}
-          type={'button'}
-        >
-          <MdSaveAlt
-            className={`
+        {showCsv() && (
+          <Button
+            className={btnClass}
+            variant={'secondary'}
+            type={'button'}
+            onClick={saveCsv}
+          >
+            <MdSaveAlt
+              className={`
               text-xl
             `}
-          />
-          CSV保存
-        </Button>
+            />
+            <span>CSV保存</span>
+          </Button>
+        )}
       </div>
     </header>
   )

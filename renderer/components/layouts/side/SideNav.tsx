@@ -1,7 +1,5 @@
-import Link from 'next/link'
-import { IoLogoElectron } from 'react-icons/io5'
 import { Logo } from './Logo'
-import { SideMenu } from './SideMenu'
+import { SideForm } from './SideForm'
 
 export const SideNav = () => {
   return (
@@ -17,7 +15,7 @@ export const SideNav = () => {
       `}
     >
       <Logo />
-      <SideMenu />
+      <SideForm />
     </aside>
   )
 }
