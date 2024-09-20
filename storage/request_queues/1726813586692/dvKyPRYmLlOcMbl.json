@@ -1,9 +1,0 @@
-{
-	"id": "dvKyPRYmLlOcMbl",
-	"json": "{\"id\":\"dvKyPRYmLlOcMbl\",\"url\":\"https://www.okeihan.net/recommend/hatsumoude/detail/01_naritasanfudouson.php\",\"uniqueKey\":\"https://www.okeihan.net/recommend/hatsumoude/detail/01_naritasanfudouson.php\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":1,\"errorMessages\":[\"Error: browserController.newPage() failed: fhUWkZ_DfsqxLmyrZlYUB\\nCause:browserContext.newPage: Target page, context or browser has been closed.\\n    at BrowserPool._createPageForBrowser (/home/oohira/study/electron/electron-hono/node_modules/@crawlee/browser-pool/browser-pool.js:399:19)\"],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":5}}}",
-	"method": "GET",
-	"orderNo": 1726813604579,
-	"retryCount": 1,
-	"uniqueKey": "https://www.okeihan.net/recommend/hatsumoude/detail/01_naritasanfudouson.php",
-	"url": "https://www.okeihan.net/recommend/hatsumoude/detail/01_naritasanfudouson.php"
-}

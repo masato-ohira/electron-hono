@@ -1,9 +1,0 @@
-{
-	"id": "s2IwL7k7EQfbJwl",
-	"json": "{\"id\":\"s2IwL7k7EQfbJwl\",\"url\":\"https://www.okeihan.net/recommend/hatsumoude/detail/01_ishiyamadera.php\",\"uniqueKey\":\"https://www.okeihan.net/recommend/hatsumoude/detail/01_ishiyamadera.php\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":1,\"errorMessages\":[\"Error: browserController.newPage() failed: WIykiPbRf7yS0usEF-C1P\\nCause:browserContext.newPage: Target page, context or browser has been closed.\\n    at BrowserPool._createPageForBrowser (/home/oohira/study/electron/electron-hono/node_modules/@crawlee/browser-pool/browser-pool.js:399:19)\"],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":5}}}",
-	"method": "GET",
-	"orderNo": 1726814086755,
-	"retryCount": 1,
-	"uniqueKey": "https://www.okeihan.net/recommend/hatsumoude/detail/01_ishiyamadera.php",
-	"url": "https://www.okeihan.net/recommend/hatsumoude/detail/01_ishiyamadera.php"
-}
