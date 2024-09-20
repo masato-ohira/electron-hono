@@ -4,6 +4,7 @@ import { cors } from 'hono/cors'
 // import playwright from './playwright'
 import crawlee from './crawlee'
 import jsonApi from './json'
+import stream from './stream'
 
 // Honoサーバを作成
 const app = new Hono()
@@ -19,4 +20,5 @@ app.get('/api', (c) => {
 app.route('/api/json', jsonApi)
 // app.route('/api/playwright', playwright)
 app.route('/api/crawlee', crawlee)
+app.route('/api/stream', stream)
 export default app

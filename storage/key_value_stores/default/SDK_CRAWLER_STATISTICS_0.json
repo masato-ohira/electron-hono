@@ -1,50 +1,36 @@
 {
-  "requestsFinished": 25,
-  "requestsFailed": 1,
-  "requestsRetries": 1,
-  "requestsFailedPerMinute": 1,
-  "requestsFinishedPerMinute": 36,
-  "requestMinDurationMillis": 3183,
-  "requestMaxDurationMillis": 4196,
-  "requestTotalFailedDurationMillis": 3095,
-  "requestTotalFinishedDurationMillis": 86468,
-  "crawlerStartedAt": "2024-09-19T09:16:29.863Z",
-  "crawlerFinishedAt": "2024-09-19T09:17:10.855Z",
-  "statsPersistedAt": "2024-09-19T09:17:10.855Z",
-  "crawlerRuntimeMillis": 41185,
-  "crawlerLastStartTimestamp": 1726737389670,
+  "requestsFinished": 7,
+  "requestsFailed": 0,
+  "requestsRetries": 0,
+  "requestsFailedPerMinute": 0,
+  "requestsFinishedPerMinute": 25,
+  "requestMinDurationMillis": 3486,
+  "requestMaxDurationMillis": 4270,
+  "requestTotalFailedDurationMillis": 0,
+  "requestTotalFinishedDurationMillis": 26359,
+  "crawlerStartedAt": "2024-09-20T00:45:56.592Z",
+  "crawlerFinishedAt": "2024-09-20T00:46:13.407Z",
+  "statsPersistedAt": "2024-09-20T00:46:13.407Z",
+  "crawlerRuntimeMillis": 17033,
+  "crawlerLastStartTimestamp": 1726793156374,
   "requestRetryHistogram": [
-    25,
-    null,
-    null,
-    null,
-    1
+    7
   ],
   "statsId": 0,
-  "requestAvgFailedDurationMillis": 3095,
-  "requestAvgFinishedDurationMillis": 3459,
-  "requestTotalDurationMillis": 89563,
-  "requestsTotal": 26,
+  "requestAvgFailedDurationMillis": null,
+  "requestAvgFinishedDurationMillis": 3766,
+  "requestTotalDurationMillis": 26359,
+  "requestsTotal": 7,
   "requestsWithStatusCode": {
-    "200": 30
+    "200": 9
   },
-  "errors": {
-    "at /home/oohira/study/electron/electron-hono/app/background.js:146:114": {
-      "missing error code": {
-        "TypeError": {
-          "Cannot read properties of undefined (reading 'call')": {
-            "count": 1
-          }
-        }
-      }
-    }
-  },
+  "errors": {},
   "retryErrors": {
-    "at /home/oohira/study/electron/electron-hono/app/background.js:146:114": {
+    "at /home/oohira/study/electron/electron-hono/app/background.js:133:115": {
       "missing error code": {
         "TypeError": {
           "Cannot read properties of undefined (reading 'call')": {
-            "count": 4
+            "count": 2
           }
         }
       }
