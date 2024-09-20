@@ -56,7 +56,6 @@ export const pageInfo = async ({ page, waitFor, selector }: Props) => {
 
   // エラーのチェック
   let no404 = true
-  console.log({ responses })
   for (const response of responses) {
     if (response.status() === 404) {
       no404 = false
