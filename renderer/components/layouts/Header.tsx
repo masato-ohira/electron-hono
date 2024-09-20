@@ -7,7 +7,7 @@ import { useSWRConfig } from 'swr'
 export const Header = () => {
   const { mutate } = useSWRConfig()
   const runToast = async () => {
-    await window.myApi.saveJson()
+    // await window.myApi.saveJson()
     toast('Event has been created.', {
       closeButton: true,
     })
