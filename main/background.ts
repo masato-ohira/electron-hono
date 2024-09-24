@@ -1,3 +1,4 @@
+import path from 'node:path'
 import honoApp from '@@/api'
 import { serve as honoServe } from '@hono/node-server'
 import { app, ipcMain } from 'electron'
@@ -22,6 +23,10 @@ if (isProd) {
   const mainWindow = createWindow('main', {
     width: 1024,
     height: 600,
+
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+    },
   })
 
   if (isProd) {

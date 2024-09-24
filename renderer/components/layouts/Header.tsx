@@ -60,26 +60,29 @@ export const Header = () => {
       className={`
         h-14
         border-b
-        hstack
-        justify-between
         px-4
         fixed right-0 z-10 top-0
         w-[calc(100%-256px)]
+        flex
         bg-gray-100
       `}
     >
-      <div className="hstack gap-4">
-        <div className="hstack">
+      <div className="hstack gap-4 w-full">
+        <div className="hstack flex-1 max-w-[480px]">
           <p className={'text-sm'}>対象URL</p>
-          <Input
-            {...register('startUrl')}
-            className={`
-            w-[33vw] h-8
-            bg-white
-            placeholder:text-foreground/30
-          `}
-            placeholder={'https://example.com'}
-          />
+          <div className="flex-1">
+            <Input
+              {...register('startUrl')}
+              className={`
+                w-full
+                h-8
+                bg-white
+                flex-1
+                placeholder:text-foreground/30
+              `}
+              placeholder={'https://example.com'}
+            />
+          </div>
         </div>
         <Button
           className={btnClass}

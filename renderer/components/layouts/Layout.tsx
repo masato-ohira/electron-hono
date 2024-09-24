@@ -3,6 +3,7 @@ import type { HTMLProps } from 'react'
 import { Header } from './Header'
 import { SideNav } from './side/SideNav'
 
+import { useZoom } from '@/hooks/useZoom'
 import type { CrawleeForm } from '@ts/crawlee'
 import { FormProvider, useForm } from 'react-hook-form'
 
@@ -11,6 +12,8 @@ type LayoutProps = HTMLProps<HTMLDivElement>
 export const Layout = (props: LayoutProps) => {
   const { children, ...rest } = props
   const methods = useForm<CrawleeForm>()
+
+  useZoom()
 
   return (
     <FormProvider {...methods}>
